@@ -1,0 +1,13 @@
+- name : Playbook to Check Tags
+  hosts: all
+  gather_facts: True
+
+  tasks:
+    - ec2_metadata_facts:
+    - ec2_instance_facts:
+        instance_ids: '{{ ansible_ec2_instance_id }}'
+        region: '{{ ansible_ec2_placement_region }}'
+      register: my_instance
+      delegate_to: localhost
+    - debug:
+        msg: my tags "{{ my_instance.instances | map(attribute='tags.YOUR_TAG_NAME') | list | join('\n') }}"
