@@ -16,4 +16,4 @@ jobs:
       - uses: chainguard-dev/actions/setup-chainctl@main
         with:
           identity: c854956e2b18fd58d82a4167fac4cf48dbf452a6/10de749e50d7053c
-      - run: docker pull cgr.dev/chainguard/node
+      - run: docker pull cgr.dev/chainguard/node:latest
