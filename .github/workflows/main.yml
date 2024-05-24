@@ -1,4 +1,4 @@
-name: Chainguard Registry Example
+name: Chainguard Registry Example for GH
 
 on:
   push:
